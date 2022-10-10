@@ -62,18 +62,19 @@ export default {
   },
   methods: {
     async sendMessage() {
-      this.newMessage = "";
+      let msg = this.newMessage;
       this.loading = true;
       this.$refs.newMessageInput.focus();
       this.conversationMessages.push({
         message: this.newMessage,
         me: true,
       });
+      this.newMessage = "";
       // API CALL
       const sendChat = httpsCallable(functions, "processNewMessage");
       let resp = await sendChat({
         sid: this.$route.params.sessionId,
-        message: this.newMessage,
+        message: msg,
       });
       this.conversationMessages.push({
         message: resp.data,

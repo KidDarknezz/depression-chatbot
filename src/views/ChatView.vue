@@ -47,8 +47,10 @@
 <script>
 import app from "../firebase";
 import { getFunctions, httpsCallable } from "firebase/functions";
+import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 const functions = getFunctions(app);
+const db = getFirestore(app);
 
 export default {
   data() {
@@ -60,6 +62,7 @@ export default {
   },
   methods: {
     async sendMessage() {
+      this.newMessage = "";
       this.loading = true;
       this.$refs.newMessageInput.focus();
       this.conversationMessages.push({
@@ -76,9 +79,13 @@ export default {
         message: resp.data,
       });
       // END API CALL
-      this.newMessage = "";
       this.loading = false;
     },
+  },
+  async mounted() {
+    let docRef = doc(db, "chatSessions", this.$route.params.sessionId);
+    const docSnap = await getDoc(docRef);
+    if (docSnap._document) this.conversationMessages = docSnap.data().chatLog;
   },
 };
 </script>

@@ -62,6 +62,7 @@ export default {
   },
   methods: {
     async sendMessage() {
+      if (!this.newMessage.trim()) return;
       let msg = this.newMessage;
       this.loading = true;
       this.$refs.newMessageInput.focus();

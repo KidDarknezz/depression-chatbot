@@ -11,3 +11,23 @@
     </q-page-container>
   </q-layout>
 </template>
+
+<style>
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap");
+
+body {
+  font-family: "DM Sans", sans-serif;
+}
+.cb-font {
+  font-family: "DM Sans", sans-serif;
+}
+.cb-regular {
+  font-weight: 400 !important;
+}
+.cb-medium {
+  font-weight: 500 !important;
+}
+.cb-bold {
+  font-weight: 700 !important;
+}
+</style>

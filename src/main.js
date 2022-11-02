@@ -8,10 +8,10 @@ import quasarUserOptions from "./quasar-user-options";
 import { getApp } from "firebase/app";
 import { getFunctions, connectFunctionsEmulator } from "firebase/functions";
 
-if (document.URL.includes("localhost")) {
-  const functions = getFunctions(getApp());
-  connectFunctionsEmulator(functions, "localhost", 5001);
-}
+// if (document.URL.includes("localhost")) {
+//   const functions = getFunctions(getApp());
+//   connectFunctionsEmulator(functions, "localhost", 5001);
+// }
 
 createApp(App)
   .use(Quasar, quasarUserOptions)

@@ -9,7 +9,7 @@
                 <q-btn
                   icon="arrow_back"
                   flat
-                  round
+                  rounded
                   to="/"
                   label="Volver"
                   no-caps

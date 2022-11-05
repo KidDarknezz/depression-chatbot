@@ -24,7 +24,7 @@
           </div>
           <div class="col q-pa-sm">
             <div class="row justify-center">
-              <div class="col-xl-3 col-xs-12">
+              <div class="col-12">
                 <div
                   class="q-px-sm"
                   style="height: 82.5vh; overflow-y: scroll"
@@ -47,7 +47,7 @@
           </div>
           <div class="col-1 q-pa-sm">
             <div class="row justify-center">
-              <div class="col-xl-3 col-xs-12">
+              <div class="col-12">
                 <q-input
                   label="Mensaje"
                   filled
